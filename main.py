@@ -3,9 +3,53 @@ import pandas as pd
 import time
 import keyboard
 
-blacklist = ["INA", "INCOPARTS", "MASTER", "MASTERFLEX", "UNIVERSAL", "VALCLEI", "ZF", "NTK", "NGK", "ZM", "Pérola Automotivo"]
-df = pd.read_excel('../file/Molina.xlsx')
-sleep = 1
+blacklist = ["INA",
+             "INCOPARTS",
+             "MASTER",
+             "MASTERFLEX",
+             "UNIVERSAL",
+             "VALCLEI",
+             "ZF",
+             "NTK",
+             "NGK",
+             "ZM",
+             "Pérola Automotivo",
+             "AUTHOMIX",
+             "COFAP MOTORES",
+             "Componentes Mahle",
+             "Importado Furação",
+             "Original Furação",
+             "CONTINENTAL",
+             "DEVIGILI",
+             "DS",
+             "EATON",
+             "GATE",
+             "GATES",
+             "IMA",
+             "LP",
+             "MAGNETI MARELLI",
+             "Mahle", "MAZZICAR",
+             "MULTIQUALITA",
+             "NSK",
+             "NWO",
+             "ROC",
+             "Schaeffler",
+             "Snap - On",
+             "snr",
+             "TAS",
+             "TECHNIC",
+             "vetor",
+             "VIRTUAL PLÁSTICOS",
+             "vox",
+             "ZEN",
+             "KG",
+             "snr",
+             "SPAAL",
+             "VALEO",
+             "VETOR",
+]
+df = pd.read_excel('./file/catalogo.xlsx')
+sleep = 0
 
 marcas_blacklist = []
 
@@ -25,7 +69,7 @@ for i in range(3, 0, -1):
     print(f"O script começará em {i} segundos. Prepare o ambiente!")
     time.sleep(1)
 #select
-pyautogui.click(x=-1361, y=448)
+pyautogui.click(x=205, y=208)
 time.sleep(sleep)
 
 for index, row in df.iterrows():
@@ -43,7 +87,7 @@ for index, row in df.iterrows():
         print(f"Marca {dado} é blacklist.")
         contador += 1
         if not item_anterior_blacklist:
-            time.sleep(3)
+            time.sleep(sleep)
         item_anterior_blacklist = True
         continue
     print(f"{contador}: {dado}")
@@ -52,11 +96,13 @@ for index, row in df.iterrows():
 
     #click
     if acao_bot == '1':
-      pyautogui.click(x=-1330, y=567)
+      pyautogui.click(x=131, y=318)
       time.sleep(sleep)
 
+    time.sleep(sleep)
     pyautogui.hotkey('ctrl', 'a')
     pyautogui.press('backspace')
+
 
     item_anterior_blacklist = False
     contador += 1
