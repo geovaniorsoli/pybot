@@ -28,27 +28,42 @@ blacklist = ["INA",
              "IMA",
              "LP",
              "MAGNETI MARELLI",
-             "Mahle", "MAZZICAR",
+             "MAHLE",
+             "MAZZICAR",
              "MULTIQUALITA",
              "NSK",
              "NWO",
              "ROC",
              "Schaeffler",
              "Snap - On",
-             "snr",
+             "SNR",
              "TAS",
              "TECHNIC",
              "vetor",
              "VIRTUAL PLÁSTICOS",
-             "vox",
+             "VOX",
              "ZEN",
              "KG",
              "snr",
              "SPAAL",
              "VALEO",
              "VETOR",
+             "KIT & CIA",
+             "PIRELLI",
+             "Faróis Vinco",
+             "FEDERAL MOGUL",
+             "HT LANTERNAS",
+             "IAM",
+             "IGUAÇU",
+             "IVA Autopeças",
+             "AMS",
+             "EURO POLO"
+             "FORCE CAR"
+             "ORI"
+             "RETROVEX"
+             "WAR"
 ]
-df = pd.read_excel('./file/catalogo.xlsx')
+df = pd.read_excel('./file/Toli.xlsx')
 sleep = 0
 
 marcas_blacklist = []
@@ -69,7 +84,7 @@ for i in range(3, 0, -1):
     print(f"O script começará em {i} segundos. Prepare o ambiente!")
     time.sleep(1)
 #select
-pyautogui.click(x=205, y=208)
+pyautogui.click(x=119, y=510)
 time.sleep(sleep)
 
 for index, row in df.iterrows():
@@ -96,7 +111,7 @@ for index, row in df.iterrows():
 
     #click
     if acao_bot == '1':
-      pyautogui.click(x=131, y=318)
+      pyautogui.click(x=124, y=641)
       time.sleep(sleep)
 
     time.sleep(sleep)
